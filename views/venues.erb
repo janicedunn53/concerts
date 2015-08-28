@@ -1,0 +1,30 @@
+<h1>Venues</h1>
+
+<% if @venues.any?() %>
+  <h3>Here are all of the venues:</h3>
+
+  <ul>
+    <% @venues.each() do |venue| %>
+      <li><%= venue.name() %>, <%= venue.city() %></li>
+    <% end %>
+  </ul>
+
+<% else %>
+  <h4>There are no venues yet!</h4>
+
+<% end %>
+
+<h3>Add a venue!</h3>
+
+<form action="/venues" method="post">
+  <label for="name"></label>
+  <input type="text" name="name" placeholder="Name" required>
+
+  <label for="city"></label>
+  <input type="text" name="city" placeholder="City" required>
+
+  <button name="submit" class="btn btn-primary">Add Band</button>
+</form>
+
+<br>
+<h5><a href="/">Home</a></h5>

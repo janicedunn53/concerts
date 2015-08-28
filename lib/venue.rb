@@ -1,5 +1,5 @@
 class Venue < ActiveRecord::Base
-  has_many(:bands)
+  has_and_belongs_to_many(:bands)
   validates(:name, :presence => true)
   validates(:city, :presence => true)
 #   before_save(:capitalize_name)
