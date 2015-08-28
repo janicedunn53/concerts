@@ -20,3 +20,22 @@ describe('path to add band', {:type => :feature}) do
     expect(page).to have_content("Bands")
   end
 end
+
+describe('path to a band', {:type => :feature}) do
+  it("allows user to navigate to the page of an individual band") do
+    visit("/bands")
+    fill_in('name', :with => "Darkness")
+    click_button('Add Band')
+    click_link('Darkness')
+    expect(page).to have_content("Darkness")
+  end
+end
+
+# describe('path to view venues of band') do
+#   it("allows user to add a venue to the concert list of the band") do
+#     visit("/bands/1")
+#     check('Wiltern')
+#     click_button('Add Venue')
+#     expect(page).to have_content("Darkness")
+#   end
+# end

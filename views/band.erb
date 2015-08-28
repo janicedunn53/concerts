@@ -1,16 +1,18 @@
 <h2><%= @band.name %></h2>
 
 <% if @band.venues.any?() %>
-  <ul>
-    <% @band.venues.each do |venue| %>
-      <li><%= venue.name %></li>
-    <% end %>
-  </ul>
+  <h3>This band has played concerts at:</h3>
+    <ul>
+      <% @band.venues.each do |venue| %>
+        <li><%= venue.name %></li>
+      <% end %>
+    </ul>
 <% else %>
   <p>This band has not played at any venues yet!</p>
 <% end %>
 
-<h3>Select all the venues this band has played at:</h3>
+<br>
+<h4>Update the concert list by selecting the venues this band has played at:</h4>
 
 <% if @venues.any?() %>
   <form action="/bands/<%= @band.id %>" method="post">
@@ -24,7 +26,7 @@
       </div>
     <% end %>
 
-    <button type="submit">Add venue</button>
+    <button type="submit" class="btn btn-primary">Add Venue</button>
   </form>
 <% end %>
 
