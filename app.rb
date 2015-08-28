@@ -18,6 +18,16 @@ post("/bands") do
   redirect("/bands")
 end
 
+# post("/bands") do
+#   name = params.fetch('name')
+#   @band = Band.new({:name => name})
+#   if @band.save()
+#     redirect("/bands")
+#   else
+#     erb(:errors)
+#   end
+# end
+
 get("/bands/:id") do
   band_id = params.fetch('id').to_i()
   @band = Band.find(band_id)
