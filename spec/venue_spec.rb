@@ -20,8 +20,8 @@ describe(Venue) do
     expect(venue.save()).to(eq(false))
   end
 
-  # it("capitalizes the name of the venue") do
-  #   venue = Venue.create({:name => "wiltern"})
-  #   expect(venue.name()).to(eq("Wiltern"))
-  # end
+  it("capitalizes the name of the venue") do
+    venue = Venue.create({:name => "wiltern", :city => "Los Angeles"})
+    expect(venue.name()).to(eq("Wiltern"))
+  end
 end
